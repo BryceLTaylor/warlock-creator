@@ -1,0 +1,77 @@
+body {
+  background-color: white;
+  position: relative;
+  height: 100%;
+}
+
+.header {
+  background-color: #4c5570;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+}
+
+h1 {
+  color: white;
+  position: static;
+  text-align: center;
+  padding-top: 10px;
+  top: 50%;
+}
+
+.page {
+  position: relative;
+  background-color: lightYellow;
+  display: flex;
+  top: 100px;
+  height: 100%;
+  width: 100%;
+}
+
+.warlock {
+  background-color: lightGray;
+  padding-left: 10px;
+  border-width: 5px;
+  border-color: red;
+  width: 75%;
+  height: 100%;
+}
+.info {
+  padding-left: 10px;
+  border-width: 5px;
+  border-color: red;
+  width: 25%;
+  height: 100%;
+}
+.name {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.statsContainer {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 15px;
+  max-width: 750px;
+  align-content: center;
+  margin: 0 auto;
+}
+.stat {
+  text-align: center;
+  position: relative;
+  background-color: white;
+  border-color: darkGray;
+  border-style: solid;
+  border-width: 3px;
+  width: 100px;
+}
+
+.statValue{
+  font-size: 3em;
+}
+
+.statName {
+  padding-bottom: 10px;
+  font-size: 2em;
+}
