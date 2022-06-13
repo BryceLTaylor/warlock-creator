@@ -9,10 +9,11 @@ body {
   position: absolute;
   width: 100%;
   height: 100px;
+  color: white;
 }
 
 h1 {
-  color: white;
+
   position: static;
   text-align: center;
   padding-top: 10px;
@@ -42,6 +43,7 @@ h1 {
   border-color: red;
   width: 25%;
   height: 100%;
+  background-color: white;
 }
 .name {
   text-align: center;
@@ -65,6 +67,11 @@ h1 {
   border-style: solid;
   border-width: 3px;
   width: 100px;
+}
+
+.options-heading {
+  font-size: 3em;
+  text-align: center;
 }
 
 .statValue{
@@ -100,5 +107,7 @@ h1 {
 .sortPreferenceButtons {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  height: 60px;
   margin: 0px 10px;
 }

@@ -1,6 +1,8 @@
 let opt;
 let statTypes = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
 
+let statsActual = [];
+
 let statOrderPreference = ['cha', 'dex', 'con', 'wis', 'int', 'str'];
 
 function getOptions (callback) {
@@ -12,14 +14,14 @@ function getOptions (callback) {
     });
 }
 
-function getRandomName(){
+function getRandomName () {
   // let nameList = opt.data.level1.name;
   let nameList = opt.level1.name;
   let elementNumber = Math.floor(Math.random()*nameList.length);
   return nameList[elementNumber];
 }
 
-function setupStatOrder(){
+function setupStatOrder () {
   let statsOrder = document.getElementById('statOrder');
 
   for (let i=0; i<statOrderPreference.length; i++){
@@ -59,7 +61,7 @@ function setupStatOrder(){
   }
 }
 
-function updateStatPrefs(statNumber, direction){
+function updateStatPrefs (statNumber, direction){
   console.log(`move stat ${statNumber} ${direction}`);
   let movingStat = statOrderPreference.splice(statNumber, 1);
   let newPosition;
@@ -74,14 +76,14 @@ function updateStatPrefs(statNumber, direction){
   setupStatOrder();
 }
 
-function generateWarlock() {
+function generateWarlock () {
   let warlockElement = document.getElementById('warlock');
   warlockElement.innerHTML = `<div class="name" id="name">${getRandomName()}</div>`;
   addStats(warlockElement);
 
 }
 
-function addStats(warlockElement) {
+function addStats (warlockElement) {
   let stats = rollAllStats2();
   let statsContainer = document.createElement('div');
   statsContainer.classList.add('statsContainer');
@@ -134,6 +136,7 @@ function rollAllStats () {
     let s = rollStat(statMin, statMax);
     stats.push(s);
   }
+  statsActual = stats;
   return stats;
 }
 
@@ -152,6 +155,7 @@ function rollAllStats2 () {
     stats.splice(statIndex, 1, rolledStats.pop());
   }
   // console.log(stats);
+  statsActual = stats;
   return stats;
 }
 
@@ -159,7 +163,7 @@ function setup () {
   getOptions( () => {
     generateWarlock();
     setupStatOrder();
-    rollAllStats2();
+    // rollAllStats2();
   });
 }
 
